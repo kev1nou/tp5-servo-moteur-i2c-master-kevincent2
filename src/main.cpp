@@ -1,6 +1,6 @@
 #include <mbed.h>
 
-#define ADDRESSE_I2C_PAR_DEFAUT 0x23
+#define ADDRESSE_I2C_PAR_DEFAUT 0x51
 
 static BufferedSerial serial_port(USBTX, USBRX);
 
@@ -15,10 +15,10 @@ int main() {
   char message[10];
 
   while(1) {
-    printf("test\r\n");
+    //printf("test\r\n");
     cmd[0] = 126; // Démarrer le moteur
     i2c.write(addr8bit, cmd, 1);
-
+    ThisThread::sleep_for(100ms);
     cmd[0] = 45; // Envoyer le moteur à la position 45°
     i2c.write(addr8bit, cmd, 1);
 
