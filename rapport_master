@@ -1,0 +1,6 @@
+Dans le code Master, nous avons réussi à faire envoyer une commande au slave. 
+Par exemple, on a fait le test en envoyant 126 et 45 en décimal.
+En branchant l'analyseur logique sur les lignes SCL et SDA, nous avons pu constater que les données se rendaient bien au slave à partir du master.
+Car, nous avons obtenu les deux bits d'addresses suivi des caractères ~ (126) et - (45).
+Pour avoir fait fonctionner le master, on a du mettre un délai de 100 ms entre les écritures de données.
+Le printf qui indique que le message a bien été reçu fonctionne aussi dans le terminal de Visual Code Studio.
